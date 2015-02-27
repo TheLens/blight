@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+
+    <link rel="stylesheet" type="text/css" href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.css'>
+    <link rel="stylesheet" type="text/css" href='https://s3-us-west-2.amazonaws.com/lensnola/blight/demo.css' />
+    <link rel="stylesheet" type="text/css" href='https://s3-us-west-2.amazonaws.com/lensnola/blight/elastislide.css'/>
+    <link rel="stylesheet" type="text/css" href='https://s3-us-west-2.amazonaws.com/lensnola/blight/tipsy.css'/>
+
+    <style>
+    @import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.css);
+    </style>
+
+</head>
+
+<body>
+
+<div id="dialog" title="Dialog"></div>
+
+<div id="mapholder">
+<p id="map">
+<div id="buttons">
+
+</div>
+
+<style>
+
+.legend {
+  width: 100%;
+  background-color: white;
+  padding: 2px;
+  float:right;
+  border: 1px solid;
+}
+
+.leaflet-right{
+  width: 20%;
+}
+</style>
+
+<div id="photopane_label">
+  Has this blight been fixed?
+</div>
+<div id="photopane"> 
+    <ul id="carousel" class="elastislide-list">
+            <li><a class="thumbnail" href="2312_CONTI_ST" id="1">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="2">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="3">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="4">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="5">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="6">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="7">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="8">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="9">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="10">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="11">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="12">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="13">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="14">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="15">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="16">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="17">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="18">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="19">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="20">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="21">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="22">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="23">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="24">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="25">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="26">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="27">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="28">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="29">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="30">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="31">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="32">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="33">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="34">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="35">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="36">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="2312_CONTI_ST" id="37">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/2312_CONTI_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="219_MAUMUS_AVE" id="38">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/219_MAUMUS_AVE.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="5908_N_DERBIGNY_ST" id="39">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/5908_N_DERBIGNY_ST.jpg'/></a>
+            </li>
+            <li><a class="thumbnail" href="1135_TECHE_ST" id="40">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="1135_TECHE_ST" id="41">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+                        <li><a class="thumbnail" href="1135_TECHE_ST" id="42">
+              <img src='https://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/1135_TECHE_ST.jpg'/></a>
+            </li>
+          </ul>
+</div>
+
+<div id="details" title="About this map">
+
+<p>
+This map shows properties that appeared on one of four <a href='http://www.nola.gov/performance-and-accountability/initiatives-and-reports/blightstat/methodology/'>BlightStat</a> databases as of January.</p>
+<p>
+It includes properties remediated in one of four ways:</p>
+
+<p>
+<ul>
+  <li><a href="https://data.nola.gov/Administrative-Data/BlightStatus-Demolitions/e3wd-h7q2" target="_blank">Demolition</a></li>
+<li><a href="https://data.nola.gov/Administrative-Data/NORA-Sold-Properties/hpm5-48nj" target="_blank">Sold by the New Orleans Redevelopment Authority</a></li>
+<li><a href="https://data.nola.gov/Administrative-Data/BlightStatus-Lien-Foreclosures/q4nv-wks6" target="_blank">Seized by the city and sold by the Orleans Parish Sheriff’s Office</a></li>
+<li><a href="https://data.nola.gov/dataset/CE-All-Hearings/44ct-56tr" target="_blank">Found to be in compliance with city code at a code enforcement hearing</a></li>
+</ul>
+</p>
+
+<p>
+For sales, the date shown is when the sale occurred. For demolitions, it's the date the demolition was marked as completed. For compliance, it's the date that a hearing officer found the property to be in line with city code.
+</p>
+
+<p>
+To investigate a property further, go to any of the above databases or the city’s OneStop App, which 
+shows <a href="http://onestopapp.nola.gov" target="_blank">code violations and city permits</a>. 
+</p>
+
+</div>
+
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src='http://s3-us-west-2.amazonaws.com/lensnola/blight/tipsy.js'></script>
+    <script type="text/javascript" src='http://s3-us-west-2.amazonaws.com/lensnola/blight/modernizr.custom.17475.js'></script>
+    <script type="text/javascript" src='http://s3-us-west-2.amazonaws.com/lensnola/blight/jquery.elastislide.js'></script>
+    <script type="text/javascript" src='http://s3-us-west-2.amazonaws.com/lensnola/blight/blight.js'></script>
+
+</body>

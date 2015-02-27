@@ -76,6 +76,7 @@ function showDialog(pth, cls) {
         base = "pic";
     }
 
+    var newsrc= "http://s3-us-west-2.amazonaws.com/lensnola/blight/images/big/10130_DREUX_AVE.jpg"
     $("#dialog").html('<img src="' + base + pth + '"><div id="caption"></div>');
     jQuery("#dialog").prev('.ui-dialog-titlebar').css("background", "white");
     if ($(window).width() < 600) {
@@ -280,7 +281,7 @@ $(document).ready(function() {
     map.zoomIn();
 });
 /* Load and project/redraw on zoom */
-d3.json("https://s3-us-west-2.amazonaws.com/lensnola/blight/out.json", function(collection) {
+d3.json("https://s3-us-west-2.amazonaws.com/lensnola/blight/out2.json", function(collection) {
     console.log("d3");
     var feature = g.selectAll("circle")
         .data(collection.features)
@@ -347,7 +348,7 @@ function loadThumbs() {
     var newpics = f.slice(0, f.length);
 
     for (var i = 0; i < newpics.length; i++) {
-        var inner = '<span class="ui-button-text"><img id="' + f[i].id + '**thumbnail" class="thumbnail" src="http://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/' + f[i].id + '"></span><p class="caption"><span id="' + i + '_caption">' + f[i].id.replace(/_/g, " ") + '</span></p>';
+        var inner = '<span class="ui-button-text"><img id="' + f[i].id + '**thumbnail" class="thumbnail" src="http://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/' + f[i].id + '.jpg"></span><p class="caption"><span id="' + i + '_caption">' + f[i].id.replace(/_/g, " ") + '</span></p>';
         $("#" + i).html(inner);
         $("#" + i).attr("href", f[i].id);
     }

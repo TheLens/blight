@@ -280,7 +280,7 @@ $(document).ready(function() {
     map.zoomIn();
 });
 /* Load and project/redraw on zoom */
-d3.json("static/out.json", function(collection) {
+d3.json("https://s3-us-west-2.amazonaws.com/lensnola/blight/out.json", function(collection) {
     console.log("d3");
     var feature = g.selectAll("circle")
         .data(collection.features)

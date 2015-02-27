@@ -76,8 +76,8 @@ function showDialog(pth, cls) {
         base = "big";
     }
 
-    var newsrc= "http://s3-us-west-2.amazonaws.com/lensnola/blight/images/" + base + pth;
-    $("#dialog").html('<img src="' + base + pth + '"><div id="caption"></div>');
+    var newsrc= "http://s3-us-west-2.amazonaws.com/lensnola/blight/images/" + base + pth + ".jpg";
+    $("#dialog").html('<img src="' + newsrc + '"><div id="caption"></div>');
     jQuery("#dialog").prev('.ui-dialog-titlebar').css("background", "white");
     if ($(window).width() < 600) {
         $("#dialog").dialog("option", "position", {
@@ -94,7 +94,8 @@ function showDialog(pth, cls) {
         });
     }
 
-    $.post("caption" + pth, function(data) {
+    url = "https://s3-us-west-2.amazonaws.com/lensnola/blight/captions" + pth;
+    $.get(url, function(data) {
         $("#caption").html(data);
         $("#map").on("click", function() {
             $('#dialog').dialog("close");

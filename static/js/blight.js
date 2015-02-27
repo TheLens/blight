@@ -204,7 +204,7 @@ legend.onAdd = function(map) {
         div.innerHTML +=
             '<li><div><span class="square" id="' + labels[i] + '"></span><div class="legend_text">' + grades[i] + '</div></div></li>';
     }
-    div.innerHTML += '</ul><div>Sources: The Lens, City of New Orleans</div><img onclick=showLegend(); style="float:right" width="15px" height="15px" src="https://s3-us-west-2.amazonaws.com/lensnola/blight/images/info.svg"></img></div>';
+    div.innerHTML += '</ul><div>Sources: The Lens, City of New Orleans</div><img onclick=showLegend(); style="float:right" width="15px" height="15px" src="http://s3-us-west-2.amazonaws.com/lensnola/blight/images/info.svg"></img></div>';
 
     return div;
 };

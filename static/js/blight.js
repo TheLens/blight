@@ -204,7 +204,7 @@ legend.onAdd = function(map) {
         div.innerHTML +=
             '<li><div><span class="square" id="' + labels[i] + '"></span><div class="legend_text">' + grades[i] + '</div></div></li>';
     }
-    div.innerHTML += '</ul><div>Sources: The Lens, City of New Orleans</div><img onclick=showLegend(); style="float:right" width="15px" height="15px" src="static/images/info.svg"></img></div>';
+    div.innerHTML += '</ul><div>Sources: The Lens, City of New Orleans</div><img onclick=showLegend(); style="float:right" width="15px" height="15px" src="https://s3-us-west-2.amazonaws.com/lensnola/blight/images/info.svg"></img></div>';
 
     return div;
 };
@@ -347,7 +347,7 @@ function loadThumbs() {
     var newpics = f.slice(0, f.length);
 
     for (var i = 0; i < newpics.length; i++) {
-        var inner = '<span class="ui-button-text"><img id="' + f[i].id + '**thumbnail" class="thumbnail" src="thumb/' + f[i].id + '"></span><p class="caption"><span id="' + i + '_caption">' + f[i].id.replace(/_/g, " ") + '</span></p>';
+        var inner = '<span class="ui-button-text"><img id="' + f[i].id + '**thumbnail" class="thumbnail" src="http://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/' + f[i].id + '"></span><p class="caption"><span id="' + i + '_caption">' + f[i].id.replace(/_/g, " ") + '</span></p>';
         $("#" + i).html(inner);
         $("#" + i).attr("href", f[i].id);
     }

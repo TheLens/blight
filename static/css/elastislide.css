@@ -1,0 +1,461 @@
+/* Elastislide Style */
+
+#map {
+  height: 700px;
+}
+
+span.grey {
+color: #5C5C5C;
+}
+
+#details a.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+border: none;
+color: #5F5F5F;
+background-color: white;
+text-decoration: underline;
+}
+
+span.ui-button-text {
+ margin: 0px !important; 
+}
+
+#details{
+
+}
+
+#details p {
+	color: grey;
+	padding-top: 10px;
+}
+
+.ui-widget-overlay
+{
+  opacity: .50 !important; /* Make sure to change both of these, as IE only sees the second one */
+  filter: Alpha(Opacity=50) !important;
+
+  background-color: rgb(50, 50, 50) !important; /* This will make it darker */
+}
+
+#div.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix {
+background-color: #ff7f00;
+opacity: .7;
+}
+
+#details li{
+padding-left: 10px;
+padding-top: 3px;
+padding-bottom: 3px;
+list-style-type: disc !important;
+color: gray;
+}
+
+.captionsection{
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.captionheader{
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+body , html{ 
+  height: 100%;
+  width: 100%;
+}
+
+.legend li {
+    list-style-type: none;
+}
+
+#title{
+z-index: 30;
+position: absolute;
+top: 5px;
+right: 40%;
+background-color: white;
+color: black;
+left: 10%;
+font-size: 18px;
+padding: 7px;
+font-weight: 500;
+border: 1px solid black;
+}
+
+svg {
+  position: relative;
+}
+
+.leaflet-container .leaflet-control-scale {
+font-size: 8px;
+}
+
+.legend_text{
+	padding-left: 5px;
+}
+
+.legend_text_small{
+	padding-left: 22px;
+	font-size: .8em;
+}
+
+
+path {
+  fill-opacity: 1;
+  stroke-width: .5px;
+  stroke-opacity: 1;
+}
+
+path:hover {
+  fill: brown;
+  fill-opacity: 1;
+}
+
+#mapholder{
+  float:left;
+  width:100%;
+  height:100%;
+  max-width: 800px;
+  position: relative;
+}
+
+#map {
+height: 100%;
+width: 100%;
+}
+
+#blightbuttons {
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+z-index: 30;
+position: absolute;
+top:10px;
+right:10px;
+height: 30px;
+width: 170px;
+color:black;
+}
+
+div#radio {
+background-color: white;
+height: 142px;
+}
+
+#radio li{
+	float: left;
+}
+
+#radio span{
+	padding-left: 5px;
+	margin-top: 3px;
+}
+
+
+ul { list-style-type: none; }
+
+#photopane_label {
+z-index: 50;
+font-weight: 400;
+border-radius: 4px;
+position: absolute;
+bottom: 181px;
+width: 26%;
+/* height: 22px; */
+margin-left: auto;
+margin-right: auto;
+/* right: 64%; */
+background: white;
+color: black;
+font-size: 16px;
+padding: 3px;
+border-radius: 2px;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-left-radius: 2px;
+border: 1px solid black;
+}
+
+#photopane{
+z-index: 50;
+position: absolute;
+bottom: 25px;
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+border-radius: 2px;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-left-radius: 2px;
+border: 1px solid black;
+}
+
+.t {
+stroke:black !important;
+stroke-width: 3px;
+stroke-opacity: .7;
+z-index: 10000;
+position: absolute;
+cursor:default;
+}
+
+.ui-button-text-only .ui-button-text {
+padding-right: 0px !important;
+}
+
+
+.Demolished{
+  fill:#377eb8;
+  stroke:#377eb8;
+}
+#demo_label{
+  background-color: #377eb8;
+}
+
+.Repaired{
+  fill:#4daf4a;
+  stroke:#4daf4a;
+}
+
+.Sheriffs_Sale{
+  fill:#ffff33;
+  stroke:#ffff33;
+}
+
+.Nora_Sale{
+  fill:#ff7f00;
+  stroke:#ff7f00;
+}
+
+.Multiple{
+  fill:#984ea3;
+  stroke:#984ea3;
+}
+#multiple_label{
+	background-color: #984ea3;
+}
+#fixed_label{
+  background-color: #4daf4a;
+}
+
+#nora_label{
+  background-color: #ff7f00;
+}
+
+#sheriff_label{
+  background-color: #ffff33;
+}
+
+div.info.legend.leaflet-control {
+font-size: 13px;
+border-radius: 3px;
+}
+
+#dialog img {
+border-right: 1px solid black;
+border-left: 1px solid black;
+width: 100%;
+}
+
+.ui-dialog-titlebar{
+	border: 1px solid black;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+#lens_label{
+  background-color:black;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px; 
+  background-color: none;
+  border: 1px solid black;
+}
+
+#buttons{
+  z-index: 30;
+  position: absolute;
+  top:5px;
+  right:0px;
+  background-color: white;
+}
+
+#lensbutton{
+  float:right;
+  width: 15%;
+}
+#picture{
+    width: 30%;
+    height: 70%;
+    margin: 0;
+    padding: 0;
+    background: #EEE url(house.jpg) 0 0 fixed;
+    background-size: cover;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 6;
+    position: absolute;
+}
+
+.ui-dialog { margin:0 auto; }
+
+
+.square{
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  border: 2px solid black;
+  float: left;
+  border-radius: 7px;
+}
+
+button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-dialog-titlebar-close {
+width: 50px !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+   background: none;
+}
+
+.ui-button-text-only .ui-button-text {
+padding:none;
+}
+
+.elastislide-wrapper{
+float: left;
+width: 100%;
+}
+
+.elastislide-list {
+	list-style-type: none;
+	display: none;
+}
+
+.no-js .elastislide-list {
+	display: block;
+}
+
+.elastislide-carousel ul li {
+	min-width: 20px; /* minimum width of the image (min width + border) */
+}
+
+.elastislide-wrapper {
+	position: relative;
+	background-color: #fff;
+	margin: 0 auto;
+	min-height: 60px;
+}
+
+.elastislide-wrapper.elastislide-loading {
+	background-image: url(../images/loading.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.elastislide-horizontal {
+	padding: 0px 40px;
+}
+
+.elastislide-vertical {
+	padding: 40px 10px;
+}
+
+.elastislide-carousel {
+	overflow: hidden;
+	position: relative;
+}
+
+.elastislide-carousel ul {
+	position: relative;
+	display: block;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	transform: translateX(0px);
+	transition-property: -webkit-transform;
+	transition-property: -moz-transform;
+	transition-property: -o-transform;
+	transition-property: -ms-transform;
+	transition-property: transform;
+  	transition-duration: 200ms;
+}
+
+.elastislide-horizontal ul {
+	white-space: nowrap;
+}
+
+.elastislide-carousel ul li {
+	margin: 0;
+	-webkit-backface-visibility: hidden;
+}
+
+.elastislide-horizontal ul li {
+	height: 100%;
+	display: inline-block;
+}
+
+.elastislide-vertical ul li {
+	display: block;
+}
+
+.elastislide-carousel ul li a {
+	display: inline-block;
+	width: 100%;
+}
+
+.elastislide-carousel ul li a img {
+	display: block;
+	border: 2px solid white;
+	max-width: 100%;
+}
+
+/* Navigation Arrows */
+
+.elastislide-wrapper nav span {
+	position: absolute;
+	background: #ddd url(https://s3-us-west-2.amazonaws.com/lensnola/blight/nav.png) no-repeat 4px 3px;
+	width: 23px;
+	height: 23px;
+	border-radius: 50%;
+	text-indent: -9000px;
+	cursor: pointer;
+	opacity: 0.8;
+	background-color: black;
+}
+
+.elastislide-wrapper nav span:hover {
+	opacity: 1.0
+}
+
+.elastislide-horizontal nav span {
+	top: 50%;
+	left: 10px;
+	margin-top: -11px;
+}
+
+.elastislide-vertical nav span {
+	top: 10px;
+	left: 50%;
+	margin-left: -11px;
+	background-position: -17px 5px;
+}
+
+.elastislide-horizontal nav span.elastislide-next {
+	right: 10px;
+	left: auto;
+	background-position: 4px -17px;
+}
+
+.elastislide-vertical nav span.elastislide-next {
+	bottom: 10px;
+	top: auto;
+	background-position: -17px -18px;
+}

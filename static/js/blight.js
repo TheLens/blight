@@ -73,10 +73,10 @@ function showDialog(pth, cls) {
     if (($(window).width() < 600) || ($(window).height() < 550)) {
         base = "mobile";
     } else {
-        base = "pic";
+        base = "big";
     }
 
-    var newsrc= "http://s3-us-west-2.amazonaws.com/lensnola/blight/images/big/10130_DREUX_AVE.jpg"
+    var newsrc= "http://s3-us-west-2.amazonaws.com/lensnola/blight/images/" + base + pth;
     $("#dialog").html('<img src="' + base + pth + '"><div id="caption"></div>');
     jQuery("#dialog").prev('.ui-dialog-titlebar').css("background", "white");
     if ($(window).width() < 600) {

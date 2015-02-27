@@ -8,6 +8,15 @@ span.grey {
 color: #5C5C5C;
 }
 
+
+button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-dialog-titlebar-close{
+	background-color: white;
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-dialog-buttons.ui-draggable {
+	border: 1px solid black;
+}
+
 #details a.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
 border: none;
 color: #5F5F5F;

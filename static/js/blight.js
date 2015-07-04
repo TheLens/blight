@@ -9,7 +9,7 @@ $("#details").dialog({
 
 function setTitleBarColor(color) {
     $(".ui-dialog-titlebar").css("background-color", color);
-    $(".ui-dialog-titlebar").css("opacity", .75);
+    $(".ui-dialog-titlebar").css("opacity", 0.75);
     $("span").css("opacity", 1);
 }
 
@@ -20,8 +20,8 @@ $(function() {
         width: $(window).width() / 3,
         buttons: {
             Close: function() {
-                var isd = "#" + $(".ui-dialog-title")[1].innerHTML.replace(/ /g, '_');;
-                hightlight(isd);
+                var isd = "#" + $(".ui-dialog-title")[1].innerHTML.replace(/ /g, '_');
+                highlight(isd);
                 $(this).dialog("close");
                 $("#map").unbind('click');
             }
@@ -30,7 +30,7 @@ $(function() {
 });
 
 var zooms = new Object();
-zooms[11] = .7;
+zooms[11] = 0.7;
 zooms[12] = 1.5;
 zooms[13] = 2;
 zooms[14] = 4;
@@ -39,13 +39,13 @@ zooms[16] = 7;
 zooms[17] = 8;
 
 function pan(id) {
-    console.log("pan");
+    // console.log("pan");
     var part_id = "#" + id.split("**")[0];
     var lat = $(part_id).attr("lat");
     var long = $(part_id).attr("long");
     if (typeof lat != 'undefined' && typeof long != 'undefined') {
         map.setView(new L.LatLng(lat, "-" + long), 15);
-        hightlight(part_id);
+        highlight(part_id);
     }
 }
 
@@ -155,23 +155,27 @@ $(function() {
         });
 });
 
-var map = new L.Map("map")
-    .setView(new L.LatLng(29.95, -90), 11)
-    .addLayer(new L.TileLayer("http://{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png", {
-        maxZoom: 17,
-        minZoom: 11
-    }));
+// New
+L.mapbox.accessToken = 'pk.eyJ1IjoidHRob3JlbiIsImEiOiJEbnRCdmlrIn0.hX5nW5GQ-J4ayOS-3UQl5w';
+var mapboxLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v3/tthoren.i7m70bek/{z}/{x}/{y}.png', {
+  attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>',
+  // scrollWheelZoom: false,
+  detectRetina: true,
+  minZoom: 11,
+  maxZoom: 17
+});
+// End new
+
+var map = new L.Map("map");
+map.setView(new L.LatLng(29.95, -90), 12);
+map.addLayer(mapboxLayer);
 
 var legend = L.control({
     position: 'topright'
 });
 
-map.on("focus", function() {
-    console.log("focus");
-});
-
 function showLegend() {
-    console.log("here");
+    // console.log("here");
     $(function() {
         $("#details").dialog({
             height: 'auto',
@@ -214,9 +218,9 @@ legend.onAdd = function(map) {
 legend.addTo(map);
 
 map.on('moveend', function() {
-    console.log("moveend");
+    // console.log("moveend");
     loadThumbs();
-    hightlight(hightlight_id);
+    highlight(highlight_id);
 });
 
 /* Initialize the SVG layer */
@@ -251,25 +255,20 @@ map.on('zoomstart', function(e) {
     prezoom = map.getZoom();
 });
 
-map.on('focus', function() {
-    console.log("focus");
-});
-
-
 map.on('zoomend', function(e) {
-    console.log("zoomend");
+    // console.log("zoomend");
     if (map.getZoom() > prezoom) {
-        console.log("zoomin");
-        console.log(map.getZoom());
-        console.log(zooms[map.getZoom()]);
+        // console.log("zoomin");
+        // console.log(map.getZoom());
+        // console.log(zooms[map.getZoom()]);
         $("path").css("stroke-width", zooms[map.getZoom()]);
-        hightlight(hightlight_id);
+        highlight(highlight_id);
     } else {
-        console.log("zoomout");
-        console.log(map.getZoom());
-        console.log(zooms[map.getZoom()]);
+        // console.log("zoomout");
+        // console.log(map.getZoom());
+        // console.log(zooms[map.getZoom()]);
         $("path").css("stroke-width", zooms[map.getZoom()]);
-        hightlight(hightlight_id);
+        highlight(highlight_id);
     }
 });
 
@@ -277,13 +276,9 @@ $(window).resize(function() {
     adjustPreview();
 });
 
-$(document).ready(function() {
-    adjustPreview();
-    map.zoomIn();
-});
 /* Load and project/redraw on zoom */
 d3.json("https://s3-us-west-2.amazonaws.com/lensnola/blight/out2.json", function(collection) {
-    console.log("d3");
+    // console.log("d3");
     var feature = g.selectAll("circle")
         .data(collection.features)
         .enter().append("path")
@@ -303,9 +298,10 @@ d3.json("https://s3-us-west-2.amazonaws.com/lensnola/blight/out2.json", function
         var adr = "/" + this.id;
         showDialog(adr, document.getElementById(this.id).className['baseVal'].split(" ")[0]);
     });
+    feature.attr("d", path);
     map.on("viewreset", function reset() {
         feature.attr("d", path);
-        console.log("reset");
+        // console.log("reset");
     });
     loadThumbs();
 
@@ -331,19 +327,19 @@ d3.json("https://s3-us-west-2.amazonaws.com/lensnola/blight/out2.json", function
     });
 });
 
-function hightlight(id) {
-    $(".hightlight").attr("style", "stroke-width:3px; stroke: black;");
+function highlight(id) {
+    $(".highlight").attr("style", "stroke-width:3px; stroke: black;");
     $(id).attr("style", "stroke-width: 30px; stroke: red !important; stroke-opacity: 1;");
-    var newclass = $(id).attr("class") + " " + "hightlight";
+    var newclass = $(id).attr("class") + " " + "highlight";
     $(id).attr("class", newclass);
 }
 
-var hightlight_id;
+var highlight_id;
 
 function loadThumbs() {
-    console.log("loadthumbs");
+    // console.log("loadthumbs");
     var bounds = map.getBounds();
-    console.log(bounds);
+    // console.log(bounds);
     var f = $("path.yesthumbnail");
 
     var newpics = f.slice(0, f.length);
@@ -368,3 +364,8 @@ function loadThumbs() {
         }
     });
 }
+
+$(document).ready(function() {
+  adjustPreview();
+  // map.zoomIn();
+});

@@ -76,7 +76,7 @@ function showDialog(pth, cls) {
         base = "big";
     }
 
-    var newsrc= "http://s3-us-west-2.amazonaws.com/lensnola/blight/images/" + base + pth + ".jpg";
+    var newsrc= "http://s3-us-west-2.amazonaws.com/lensnola/blight/static/images/" + base + pth + ".jpg";
     $("#dialog").html('<img src="' + newsrc + '"><div id="caption"></div>');
     jQuery("#dialog").prev('.ui-dialog-titlebar').css("background", "white");
     if ($(window).width() < 600) {
@@ -94,7 +94,7 @@ function showDialog(pth, cls) {
         });
     }
 
-    url = "https://s3-us-west-2.amazonaws.com/lensnola/blight/captions" + pth;
+    url = "https://s3-us-west-2.amazonaws.com/lensnola/blight/static/captions" + pth;
     $.get(url, function(data) {
         $("#caption").html(data);
         $("#map").on("click", function() {
@@ -210,7 +210,7 @@ legend.onAdd = function(map) {
         div.innerHTML +=
             '<li><div><span class="square" id="' + labels[i] + '"></span><div class="legend_text">' + grades[i] + '</div></div></li>';
     }
-    div.innerHTML += '</ul><div>Sources: The Lens, City of New Orleans</div><img onclick=showLegend(); style="float:right" width="15px" height="15px" src="http://s3-us-west-2.amazonaws.com/lensnola/blight/images/info.svg"></img></div>';
+    div.innerHTML += '</ul><div>Sources: The Lens, City of New Orleans</div><img onclick=showLegend(); style="float:right" width="15px" height="15px" src="http://s3-us-west-2.amazonaws.com/lensnola/blight/static/images/info.svg"></img></div>';
 
     return div;
 };
@@ -277,8 +277,8 @@ $(window).resize(function() {
 });
 
 /* Load and project/redraw on zoom */
-d3.json("https://s3-us-west-2.amazonaws.com/lensnola/blight/static/out2.json", function(collection) {
-    // console.log("d3");
+d3.json("https://s3-us-west-2.amazonaws.com/lensnola/blight/static/data.json", function(collection) {
+    console.log(collection);
     var feature = g.selectAll("circle")
         .data(collection.features)
         .enter().append("path")
@@ -345,7 +345,7 @@ function loadThumbs() {
     var newpics = f.slice(0, f.length);
 
     for (var i = 0; i < newpics.length; i++) {
-        var inner = '<span class="ui-button-text"><img id="' + f[i].id + '**thumbnail" class="thumbnail" src="http://s3-us-west-2.amazonaws.com/lensnola/blight/images/thumb/' + f[i].id + '.jpg"></span><p class="caption"><span id="' + i + '_caption">' + f[i].id.replace(/_/g, " ") + '</span></p>';
+        var inner = '<span class="ui-button-text"><img id="' + f[i].id + '**thumbnail" class="thumbnail" src="http://s3-us-west-2.amazonaws.com/lensnola/blight/static/images/thumb/' + f[i].id + '.jpg"></span><p class="caption"><span id="' + i + '_caption">' + f[i].id.replace(/_/g, " ") + '</span></p>';
         $("#" + i).html(inner);
         $("#" + i).attr("href", f[i].id);
     }
